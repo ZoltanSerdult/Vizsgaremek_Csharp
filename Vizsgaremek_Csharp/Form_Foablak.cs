@@ -24,20 +24,18 @@ namespace Vizsgaremek_Csharp
 
 
         private void Form_Foablak_Load(object sender, EventArgs e)
-        {
-            
-                MySqlConnectionStringBuilder sb = new MySqlConnectionStringBuilder();
-                sb.Server = "localhost";
-                sb.UserID = "root";
-                sb.Password = "";
-                sb.Database = "vizsgaremek";
-                sb.CharacterSet = "utf8";
-                connection = new MySqlConnection(sb.ToString());
-                sql = connection.CreateCommand();
+        {    
+            MySqlConnectionStringBuilder sb = new MySqlConnectionStringBuilder();
+            sb.Server = "localhost";
+            sb.UserID = "root";
+            sb.Password = "";
+            sb.Database = "vizsgaremek";
+            sb.CharacterSet = "utf8";
+            connection = new MySqlConnection(sb.ToString());
+            sql = connection.CreateCommand();
             
             Termekmegjelenit();
 
-            
             StreamReader sr = new StreamReader("afa.txt", Encoding.Default);
                 string afaertek = sr.ReadLine();
                 sr.Close();
@@ -50,6 +48,7 @@ namespace Vizsgaremek_Csharp
             StreamWriter sw = new StreamWriter("afa.txt");
             sw.Write(numericUpDown_afa.Value);
             sw.Close();
+            label_afamutat.Text = numericUpDown_afa.Value.ToString();
         }
 
         private void Termekmegjelenit()
@@ -63,7 +62,7 @@ namespace Vizsgaremek_Csharp
                 {
                     while (dr.Read())
                     {
-                        Termek uj = new Termek(dr.GetInt32("termek_id"),
+                        Termek uj = new Termek(/* dr.GetInt32("termek_id" ), */
                             dr.GetString("nev"),
                             dr.GetInt32("ar"),                           
                             dr.GetInt32("keszlet"),
@@ -73,7 +72,7 @@ namespace Vizsgaremek_Csharp
                             dr.GetInt32("szinhomerseklet"),
                             dr.GetString("termekkod"),
                             dr.GetInt32("ean"),
-                            dr.GetInt32("allapot"),
+                            dr.GetString("allapot"),
                             dr.GetString("leiras"),
                             dr.GetInt32("elerheto"),
                             dr.GetInt32("akcio"),
@@ -81,21 +80,53 @@ namespace Vizsgaremek_Csharp
                         listBox_Termek.Items.Add(uj);
                     }
                 }
-                connection.Close();
+                
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
+            connection.Close();
             
 
         }
 
         private void button_felvesz_Click(object sender, EventArgs e)
         {
-            sql.CommandText = "INSERT INTO `termek` (`termek_id`, `nev`, `ar`, `keszlet`, `foglalat`, `forma`, `teljesitmeny`, `szinhomerseklet`, `termekkod`, `ean`, `allapot`, `leiras`, `elerheto`, `akcio`, `marka`) VALUES (NULL, @termek_id, @nev, @ar, @keszlet, @foglalat, @forma, @teljesitmeny, @szinhomerseklet, @termekkod, @ean, @allapot, @leiras, @akcio, @marka);";
-            sql.Parameters.AddWithValue("@termek_id", textBox_termekkod.Text);
+            if (string.IsNullOrEmpty(textBox_megnevezes.Text))
+            {
+                MessageBox.Show("Nincs kitöltve a megnevezés mezö", "Hiányzó Adat");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_marka.Text))
+            {
+                MessageBox.Show("Nincs kitöltve a márka mezö", "Hiányzó Adat");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_termekkod.Text))
+            {
+                MessageBox.Show("Nincs kitöltve a Termék kód mezö", "Hiányzó Adat");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_ean.Text))
+            {
+                MessageBox.Show("Nincs kitöltve a EAN kód mezö", "Hiányzó Adat");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_allapot.Text))
+            {
+                MessageBox.Show("Nincs kitöltve a Állapot", "Hiányzó Adat");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_leiras.Text))
+            {
+                MessageBox.Show("Nincs kitöltve a Leirás mezö", "Hiányzó Adat");
+                return;
+            }
+            
+            sql.CommandText = "INSERT INTO `termek` (`nev`, `ar`, `keszlet`, `foglalat`, `forma`, `teljesitmeny`, `szinhomerseklet`, `termekkod`, `ean`, `allapot`, `leiras`, `elerheto`, `akcio`, `marka`) VALUES (@nev, @ar, @keszlet, @foglalat, @forma, @teljesitmeny, @szinhomerseklet, @termekkod, @ean, @allapot, @leiras, @akcio, @marka);";
+
+            
             sql.Parameters.AddWithValue("@nev", textBox_megnevezes.Text);
             sql.Parameters.AddWithValue("@ar",numericUpDown_ar.Value);
             sql.Parameters.AddWithValue("@keszlet",numericUpDown_darab.Value);
@@ -119,6 +150,26 @@ namespace Vizsgaremek_Csharp
                 MessageBox.Show(ex.Message);
             }
             connection.Close();
+
+            Termekmegjelenit();
+        }
+
+        private void listBox_Termek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Termek kivalaszt = (Termek)listBox_Termek.SelectedItem;
+            textBox_megnevezes.Text = kivalaszt.Nev.ToString();
+            numericUpDown_darab.Value = kivalaszt.Keszlet;
+            numericUpDown_ar.Value = kivalaszt.Ar;
+            textBox_marka.Text = kivalaszt.Marka.ToString();
+            numericUpDown_akcio.Value = kivalaszt.Akcio;
+            textBox_termekkod.Text = kivalaszt.Termekkod.ToString();
+            textBox_ean.Text = kivalaszt.Ean.ToString();
+            textBox_allapot.Text = kivalaszt.Allapot.ToString();
+            textBox_leiras.Text = kivalaszt.Leiras.ToString();
+            textBox_foglalat.Text = kivalaszt.Foglalat.ToString();
+            textBox_forma.Text = kivalaszt.Forma.ToString();
+            numericUpDown_teljesitmeny.Value = kivalaszt.Teljesimeny;
+            numericUpDown_szinho.Value = kivalaszt.Szinho;
         }
     }
 }

@@ -84,6 +84,7 @@ namespace Vizsgaremek_Csharp
             this.listBox_Termek.Name = "listBox_Termek";
             this.listBox_Termek.Size = new System.Drawing.Size(971, 368);
             this.listBox_Termek.TabIndex = 0;
+            this.listBox_Termek.SelectedIndexChanged += new System.EventHandler(this.listBox_Termek_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -149,9 +150,19 @@ namespace Vizsgaremek_Csharp
             // numericUpDown_darab
             // 
             this.numericUpDown_darab.Location = new System.Drawing.Point(179, 34);
+            this.numericUpDown_darab.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.numericUpDown_darab.Name = "numericUpDown_darab";
             this.numericUpDown_darab.Size = new System.Drawing.Size(77, 20);
             this.numericUpDown_darab.TabIndex = 8;
+            this.numericUpDown_darab.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // textBox_allapot
             // 
@@ -172,9 +183,19 @@ namespace Vizsgaremek_Csharp
             // numericUpDown_ar
             // 
             this.numericUpDown_ar.Location = new System.Drawing.Point(262, 34);
+            this.numericUpDown_ar.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.numericUpDown_ar.Name = "numericUpDown_ar";
             this.numericUpDown_ar.Size = new System.Drawing.Size(98, 20);
             this.numericUpDown_ar.TabIndex = 11;
+            this.numericUpDown_ar.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
             // label6
             // 
@@ -302,6 +323,11 @@ namespace Vizsgaremek_Csharp
             this.numericUpDown_akcio.Name = "numericUpDown_akcio";
             this.numericUpDown_akcio.Size = new System.Drawing.Size(73, 20);
             this.numericUpDown_akcio.TabIndex = 30;
+            this.numericUpDown_akcio.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             // 
             // label_A
             // 
@@ -323,9 +349,9 @@ namespace Vizsgaremek_Csharp
             this.groupBox2.Controls.Add(this.textBox_forma);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(378, 32);
+            this.groupBox2.Location = new System.Drawing.Point(378, 33);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(347, 123);
+            this.groupBox2.Size = new System.Drawing.Size(347, 142);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tulajdonság";
@@ -336,13 +362,24 @@ namespace Vizsgaremek_Csharp
             this.textBox_foglalat.Name = "textBox_foglalat";
             this.textBox_foglalat.Size = new System.Drawing.Size(147, 20);
             this.textBox_foglalat.TabIndex = 24;
+            this.textBox_foglalat.Text = "Kör";
             // 
             // numericUpDown_szinho
             // 
             this.numericUpDown_szinho.Location = new System.Drawing.Point(212, 92);
+            this.numericUpDown_szinho.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.numericUpDown_szinho.Name = "numericUpDown_szinho";
             this.numericUpDown_szinho.Size = new System.Drawing.Size(71, 20);
             this.numericUpDown_szinho.TabIndex = 27;
+            this.numericUpDown_szinho.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // label9
             // 
@@ -356,9 +393,19 @@ namespace Vizsgaremek_Csharp
             // numericUpDown_teljesitmeny
             // 
             this.numericUpDown_teljesitmeny.Location = new System.Drawing.Point(35, 92);
+            this.numericUpDown_teljesitmeny.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.numericUpDown_teljesitmeny.Name = "numericUpDown_teljesitmeny";
             this.numericUpDown_teljesitmeny.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown_teljesitmeny.TabIndex = 26;
+            this.numericUpDown_teljesitmeny.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             // 
             // label10
             // 
@@ -375,6 +422,7 @@ namespace Vizsgaremek_Csharp
             this.textBox_forma.Name = "textBox_forma";
             this.textBox_forma.Size = new System.Drawing.Size(100, 20);
             this.textBox_forma.TabIndex = 25;
+            this.textBox_forma.Text = "Kerek";
             // 
             // label11
             // 

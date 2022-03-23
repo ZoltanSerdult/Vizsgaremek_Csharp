@@ -64,6 +64,8 @@ namespace Vizsgaremek_Csharp
             this.textBox_Belepesjelszo.Name = "textBox_Belepesjelszo";
             this.textBox_Belepesjelszo.Size = new System.Drawing.Size(200, 20);
             this.textBox_Belepesjelszo.TabIndex = 3;
+            this.textBox_Belepesjelszo.Text = "1234";
+            this.textBox_Belepesjelszo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Belepesnev
             // 
@@ -71,6 +73,8 @@ namespace Vizsgaremek_Csharp
             this.textBox_Belepesnev.Name = "textBox_Belepesnev";
             this.textBox_Belepesnev.Size = new System.Drawing.Size(200, 20);
             this.textBox_Belepesnev.TabIndex = 4;
+            this.textBox_Belepesnev.Text = "Raktaros1";
+            this.textBox_Belepesnev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button_Belepes
             // 

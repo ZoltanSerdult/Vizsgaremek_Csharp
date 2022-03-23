@@ -8,7 +8,7 @@ namespace Vizsgaremek_Csharp
 {
     class Termek
     {
-        readonly int termek_id;
+       // readonly int termek_id;
         string nev;
         int ar;
         int keszlet;
@@ -18,14 +18,14 @@ namespace Vizsgaremek_Csharp
         int szinho;
         string termekkod;
         int ean;
-        int allapot;
+        string allapot;
         string leiras;
         int elerheto;
         int akcio;
         string marka;
+        
 
-        public int Termek_id => termek_id;
-
+       // public int Termek_id => termek_id;
         public string Nev { get => nev; set => nev = value; }
         public int Ar { get => ar; set => ar = value; }
         public int Keszlet { get => keszlet; set => keszlet = value; }
@@ -35,15 +35,15 @@ namespace Vizsgaremek_Csharp
         public int Szinho { get => szinho; set => szinho = value; }
         public string Termekkod { get => termekkod; set => termekkod = value; }
         public int Ean { get => ean; set => ean = value; }
-        public int Allapot { get => allapot; set => allapot = value; }
+        public string Allapot { get => allapot; set => allapot = value; }
         public string Leiras { get => leiras; set => leiras = value; }
         public int Elerheto { get => elerheto; set => elerheto = value; }
         public int Akcio { get => akcio; set => akcio = value; }
         public string Marka { get => marka; set => marka = value; }
 
-        public Termek(int termek_id, string nev, int ar, int keszlet, string foglalat, string forma, int teljesimeny, int szinho, string termekkod, int ean, int allapot, string leiras, int elerheto, int akcio, string marka)
+        public Termek(string nev, int ar, int keszlet, string foglalat, string forma, int teljesimeny, int szinho, string termekkod, int ean, string allapot, string leiras, int elerheto, int akcio, string marka)
         {
-            this.termek_id = termek_id;
+            // this.termek_id = termek_id;
             Nev = nev;
             Ar = ar;
             Keszlet = keszlet;
@@ -58,6 +58,10 @@ namespace Vizsgaremek_Csharp
             Elerheto = elerheto;
             Akcio = akcio;
             Marka = marka;
+        }
+        public override string ToString()
+        {
+            return "|Név - " + Nev + "|      |Ár - "+ Ar +"|      |Készlet - " + Keszlet + "|      |Kód - " + Termekkod + "|      |Akció - " + Akcio + "|      |Márka - " + Marka+"|";
         }
     }
 }
