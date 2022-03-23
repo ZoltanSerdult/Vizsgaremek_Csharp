@@ -40,7 +40,7 @@ namespace Vizsgaremek_Csharp
                 string afaertek = sr.ReadLine();
                 sr.Close();
             numericUpDown_afa.Value = Convert.ToInt32(afaertek);
-            label_afamutat.Text = (afaertek);
+            label_afamutat.Text = ($"A jelenlegi \náfa érték {afaertek}%");
         }
 
         private void button_afaBeallit_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Vizsgaremek_Csharp
             StreamWriter sw = new StreamWriter("afa.txt");
             sw.Write(numericUpDown_afa.Value);
             sw.Close();
-            label_afamutat.Text = numericUpDown_afa.Value.ToString();
+            label_afamutat.Text = "A jelenlegi \náfa érték " + numericUpDown_afa.Value.ToString() +"%";
         }
 
         private void Termekmegjelenit()

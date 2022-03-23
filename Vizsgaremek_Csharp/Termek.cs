@@ -61,7 +61,7 @@ namespace Vizsgaremek_Csharp
         }
         public override string ToString()
         {
-            return "|Név - " + Nev + "|      |Ár - "+ Ar +"|      |Készlet - " + Keszlet + "|      |Kód - " + Termekkod + "|      |Akció - " + Akcio + "|      |Márka - " + Marka+"|";
+            return "|Név - " + Nev + "|             |Ár - "+ Ar +"|             |Készlet - " + Keszlet;
         }
     }
 }

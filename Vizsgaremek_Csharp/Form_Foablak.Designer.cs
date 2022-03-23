@@ -230,6 +230,8 @@ namespace Vizsgaremek_Csharp
             // button_felvesz
             // 
             this.button_felvesz.BackColor = System.Drawing.Color.GreenYellow;
+            this.button_felvesz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_felvesz.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_felvesz.Location = new System.Drawing.Point(748, 38);
             this.button_felvesz.Name = "button_felvesz";
             this.button_felvesz.Size = new System.Drawing.Size(125, 31);
@@ -241,7 +243,8 @@ namespace Vizsgaremek_Csharp
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Location = new System.Drawing.Point(748, 124);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 31);
@@ -252,6 +255,8 @@ namespace Vizsgaremek_Csharp
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Cornsilk;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button3.Location = new System.Drawing.Point(748, 81);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 31);
