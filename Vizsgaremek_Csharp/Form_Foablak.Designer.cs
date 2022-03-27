@@ -47,7 +47,7 @@ namespace Vizsgaremek_Csharp
             this.label7 = new System.Windows.Forms.Label();
             this.button_felvesz = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_Modosit = new System.Windows.Forms.Button();
             this.button_afaBeallit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LabalMárka = new System.Windows.Forms.Label();
@@ -67,6 +67,10 @@ namespace Vizsgaremek_Csharp
             this.textBox_ean = new System.Windows.Forms.TextBox();
             this.label_afamutat = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.numericUpDown_elerheto = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox_id = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_darab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_afa)).BeginInit();
@@ -75,6 +79,7 @@ namespace Vizsgaremek_Csharp
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_szinho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_teljesitmeny)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_elerheto)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox_Termek
@@ -231,7 +236,7 @@ namespace Vizsgaremek_Csharp
             // 
             this.button_felvesz.BackColor = System.Drawing.Color.GreenYellow;
             this.button_felvesz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_felvesz.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_felvesz.ForeColor = System.Drawing.SystemColors.WindowText;
             this.button_felvesz.Location = new System.Drawing.Point(748, 38);
             this.button_felvesz.Name = "button_felvesz";
             this.button_felvesz.Size = new System.Drawing.Size(125, 31);
@@ -244,7 +249,7 @@ namespace Vizsgaremek_Csharp
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.button2.Location = new System.Drawing.Point(748, 124);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 31);
@@ -252,17 +257,18 @@ namespace Vizsgaremek_Csharp
             this.button2.Text = "Árut töröl";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // button_Modosit
             // 
-            this.button3.BackColor = System.Drawing.Color.Cornsilk;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(748, 81);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 31);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Árut modosit";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button_Modosit.BackColor = System.Drawing.Color.Cornsilk;
+            this.button_Modosit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Modosit.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button_Modosit.Location = new System.Drawing.Point(748, 81);
+            this.button_Modosit.Name = "button_Modosit";
+            this.button_Modosit.Size = new System.Drawing.Size(125, 31);
+            this.button_Modosit.TabIndex = 17;
+            this.button_Modosit.Text = "Árut modosit";
+            this.button_Modosit.UseVisualStyleBackColor = false;
+            this.button_Modosit.Click += new System.EventHandler(this.button_Modosit_Click);
             // 
             // button_afaBeallit
             // 
@@ -276,6 +282,8 @@ namespace Vizsgaremek_Csharp
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.textBox_id);
             this.groupBox1.Controls.Add(this.LabalMárka);
             this.groupBox1.Controls.Add(this.textBox_marka);
             this.groupBox1.Controls.Add(this.numericUpDown_akcio);
@@ -288,7 +296,7 @@ namespace Vizsgaremek_Csharp
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.numericUpDown_darab);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button_Modosit);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
@@ -476,17 +484,51 @@ namespace Vizsgaremek_Csharp
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 289);
+            this.label13.Location = new System.Drawing.Point(20, 289);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(804, 13);
+            this.label13.Size = new System.Drawing.Size(200, 13);
             this.label13.TabIndex = 21;
-            this.label13.Text = resources.GetString("label13.Text");
+            this.label13.Text = "Név         -          Ár          -            Készlet";
+            // 
+            // numericUpDown_elerheto
+            // 
+            this.numericUpDown_elerheto.Location = new System.Drawing.Point(321, 263);
+            this.numericUpDown_elerheto.Name = "numericUpDown_elerheto";
+            this.numericUpDown_elerheto.Size = new System.Drawing.Size(51, 20);
+            this.numericUpDown_elerheto.TabIndex = 22;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(254, 265);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 13);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Elérhetö-e?";
+            // 
+            // textBox_id
+            // 
+            this.textBox_id.Location = new System.Drawing.Point(551, 13);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(100, 20);
+            this.textBox_id.TabIndex = 33;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(498, 17);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 13);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "Sorszám";
             // 
             // Form_Foablak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 701);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.numericUpDown_elerheto);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label_afamutat);
             this.Controls.Add(this.groupBox1);
@@ -508,6 +550,7 @@ namespace Vizsgaremek_Csharp
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_szinho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_teljesitmeny)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_elerheto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,7 +573,7 @@ namespace Vizsgaremek_Csharp
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button_felvesz;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_Modosit;
         public System.Windows.Forms.ListBox listBox_Termek;
         private System.Windows.Forms.Button button_afaBeallit;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -551,5 +594,9 @@ namespace Vizsgaremek_Csharp
         private System.Windows.Forms.Label label_A;
         private System.Windows.Forms.Label LabalMárka;
         private System.Windows.Forms.TextBox textBox_marka;
+        private System.Windows.Forms.NumericUpDown numericUpDown_elerheto;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox_id;
     }
 }

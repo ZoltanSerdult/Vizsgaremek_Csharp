@@ -8,7 +8,7 @@ namespace Vizsgaremek_Csharp
 {
     class Termek
     {
-       // readonly int termek_id;
+       readonly int termek_id;
         string nev;
         int ar;
         int keszlet;
@@ -25,7 +25,7 @@ namespace Vizsgaremek_Csharp
         string marka;
         
 
-       // public int Termek_id => termek_id;
+        public int Termek_id => termek_id;
         public string Nev { get => nev; set => nev = value; }
         public int Ar { get => ar; set => ar = value; }
         public int Keszlet { get => keszlet; set => keszlet = value; }
@@ -41,9 +41,9 @@ namespace Vizsgaremek_Csharp
         public int Akcio { get => akcio; set => akcio = value; }
         public string Marka { get => marka; set => marka = value; }
 
-        public Termek(string nev, int ar, int keszlet, string foglalat, string forma, int teljesimeny, int szinho, string termekkod, int ean, string allapot, string leiras, int elerheto, int akcio, string marka)
+        public Termek(int termek_id, string nev, int ar, int keszlet, string foglalat, string forma, int teljesimeny, int szinho, string termekkod, int ean, string allapot, string leiras, int elerheto, int akcio, string marka)
         {
-            // this.termek_id = termek_id;
+            this.termek_id = termek_id;
             Nev = nev;
             Ar = ar;
             Keszlet = keszlet;

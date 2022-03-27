@@ -14,13 +14,11 @@ namespace Vizsgaremek_Csharp
 {
     public partial class Form1 : Form
     {
-        MySqlConnection Con = new MySqlConnection(@"Data Source=localhost;port=3306;Initial Catalog=vizsgaremek;User Id=root;password=''");
-        int i;
+        
         public Form1()
         {
             InitializeComponent();
         }
-
         private void button_Belepes_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_Belepesnev.Text))
@@ -44,7 +42,6 @@ namespace Vizsgaremek_Csharp
             sb.Database = "vizsgaremek";
             sb.CharacterSet = "utf8";
             MySqlConnection con = new MySqlConnection(sb.ToString());
-
 
             try
             {
@@ -81,18 +78,6 @@ namespace Vizsgaremek_Csharp
             {
                 MessageBox.Show($"Hiba \nKeresse fel a rendszergazdát \nA jelenlegi hiba: \n \n{ex}", "HIBA");
             }
-
-
-            /*
-            button_Programindito.Visible = true;
-            textBox_Belepesnev.Visible = false;
-            label2.Visible = false;
-            textBox_Belepesjelszo.Visible = false;
-            button_Belepes.Visible = false;
-            label1.Text = "Bejentkezve";
-            */
-
-
         }
 
         private void button_Programindito_Click(object sender, EventArgs e)

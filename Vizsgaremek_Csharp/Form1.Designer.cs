@@ -63,7 +63,7 @@ namespace Vizsgaremek_Csharp
             this.textBox_Belepesjelszo.Location = new System.Drawing.Point(77, 95);
             this.textBox_Belepesjelszo.Name = "textBox_Belepesjelszo";
             this.textBox_Belepesjelszo.Size = new System.Drawing.Size(200, 20);
-            this.textBox_Belepesjelszo.TabIndex = 3;
+            this.textBox_Belepesjelszo.TabIndex = 2;
             this.textBox_Belepesjelszo.Text = "1234";
             this.textBox_Belepesjelszo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -72,7 +72,7 @@ namespace Vizsgaremek_Csharp
             this.textBox_Belepesnev.Location = new System.Drawing.Point(77, 36);
             this.textBox_Belepesnev.Name = "textBox_Belepesnev";
             this.textBox_Belepesnev.Size = new System.Drawing.Size(200, 20);
-            this.textBox_Belepesnev.TabIndex = 4;
+            this.textBox_Belepesnev.TabIndex = 1;
             this.textBox_Belepesnev.Text = "Raktaros1";
             this.textBox_Belepesnev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -81,7 +81,7 @@ namespace Vizsgaremek_Csharp
             this.button_Belepes.Location = new System.Drawing.Point(98, 121);
             this.button_Belepes.Name = "button_Belepes";
             this.button_Belepes.Size = new System.Drawing.Size(163, 30);
-            this.button_Belepes.TabIndex = 5;
+            this.button_Belepes.TabIndex = 3;
             this.button_Belepes.Text = "BEJELENKEZÉS";
             this.button_Belepes.UseVisualStyleBackColor = true;
             this.button_Belepes.Click += new System.EventHandler(this.button_Belepes_Click);
@@ -91,7 +91,7 @@ namespace Vizsgaremek_Csharp
             this.button_Programindito.Location = new System.Drawing.Point(98, 157);
             this.button_Programindito.Name = "button_Programindito";
             this.button_Programindito.Size = new System.Drawing.Size(163, 33);
-            this.button_Programindito.TabIndex = 6;
+            this.button_Programindito.TabIndex = 4;
             this.button_Programindito.Text = "PROGRAM INDITÁSA";
             this.button_Programindito.UseVisualStyleBackColor = true;
             this.button_Programindito.Visible = false;
